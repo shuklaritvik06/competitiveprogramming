@@ -1,0 +1,4 @@
+https://codeforces.com/problemset/problem/812/B
+
+For each row, compute the position of last row which has 1 both from left and right. 
+This is Greedy Approach. 
