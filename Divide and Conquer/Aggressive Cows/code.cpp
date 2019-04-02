@@ -3,7 +3,7 @@ using namespace std;
 int n, c;
 int func(int num, int array[]) {
   int cows = 1, pos = array[0];
-  for (int i - 1; i < n; i++) {
+  for (int i = 1; i < n; i++) {
     if (array[i] - pos >= num) {
       cows++;
       if (cows == c) { // if all the cows have been placed
