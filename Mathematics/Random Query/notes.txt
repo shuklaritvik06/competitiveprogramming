@@ -1,0 +1,5 @@
+for l,r at same place we are taking 1/2*1/2*(1)
+1 because for the number of distinct elements that can come at one place as both l and r are same!
+In die throw, we were looking at probability of a number which is 1/6 and as a value of outcomes we were taking the number.
+But in this case we take the outcome as NO. OF DISTINCT ELEMENTS AND NOT THE NUMBER ITSELF.
+ISLIYE for array 1,2 : l,r at same index wont give expected outcome as 2 because the outcome is not the number, it's the number of unique elements, which can be 1 only at a single index.
