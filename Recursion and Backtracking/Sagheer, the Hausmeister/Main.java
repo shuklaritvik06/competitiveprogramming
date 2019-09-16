@@ -32,11 +32,8 @@ public class Main {
 
             }
         }
-
         int[][] build = Arrays.copyOfRange(building , topZeroRow , n);
         System.out.println(caculate(n -1-topZeroRow, 0 , build));
-
-
     }
 
     private static int caculate(int floor, int door, int[][] building) {
@@ -46,8 +43,6 @@ public class Main {
 
         int cost = 0;
         if (door ==0) {
-
-
             for (int i = door; i < building[0].length; i++) {
                 if (building[floor][i] == 1) {
                     cost = i;
@@ -56,11 +51,9 @@ public class Main {
             if (floor == 0){
                 return cost;
             }
-
             int left = caculate(floor-1 , 0 , building);
             int right = caculate(floor-1 , building[0].length-1 , building);
             return 1+Math.min(2*cost+ left, building[0].length-1+ right);
-
         }
         else {
             for (int i = building[0].length-1; i >=0 ; i--) {
@@ -71,7 +64,6 @@ public class Main {
             if (floor == 0){
                 return cost;
             }
-
             int left = caculate(floor-1 , 0 , building);
             int right = caculate(floor - 1 , building[0].length-1 , building);
             return 1 + Math.min( building[0].length -1 +  left, 2*cost+ right);
