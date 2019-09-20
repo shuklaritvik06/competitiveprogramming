@@ -21,7 +21,7 @@ public class Main {
             }
             blocks[block_id] += arr[i];
         }
-        
+
         System.out.println(Arrays.toString(blocks));
 
         // updates and queries
