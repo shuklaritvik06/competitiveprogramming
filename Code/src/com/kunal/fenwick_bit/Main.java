@@ -9,10 +9,26 @@ public class Main {
         int[] bit = new int[n+1];
 
         // build the bit : O(NLogN)
+//        for (int i = 1; i <= n; i++) {
+//            bit[i] = s.nextInt();
+//            update(i, bit[i], n, bit);
+//        }
+
+        // count inversions : Note - to make sure that array only has elements from 1 to n,
+        // assign numbers from 1 to n based on their increasing order if the elements are large
+        // This is called Coordinate Compression
+        int[] arr = new int[n+1];
         for (int i = 1; i <= n; i++) {
-            bit[i] = s.nextInt();
-            update(i, bit[i], n, bit);
+            arr[i] = s.nextInt();
         }
+
+        // inversion count
+        int ans = 0;
+        for (int i = n; i >= 1; i--) {
+            ans += query(arr[i]-1, bit);
+            update(arr[i], 1, n, bit);
+        }
+        System.out.println(ans);
     }
 
     // O(LogN)
@@ -34,7 +50,7 @@ public class Main {
     // sum till ith index : O(LogN)
     public static int query(int i, int[] bit) {
         int sum = 0;
-        while(i >= 0) {
+        while(i > 0) {
             sum += bit[i];
             i -= (i & (-i));
         }
