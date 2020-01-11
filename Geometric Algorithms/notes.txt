@@ -1,0 +1,20 @@
+Convex Hull :
+- Interior angles < 180 deg
+- Point left most will always lie on convex hull
+
+How?
+- Start from the leftmost point and connect that with each other point
+- take angle in clockwise direction and choose rightmost point (a)
+- now pick point a and repeat the steps
+- Time Complexity = O(N^2)
+- This is brute force algorithm called Jarvis algorithm to solve convex hull
+
+Graham Scan Algorithm : Optimised version to solve convex hull
+- Pick bottommost point as your start point (if y value is same, pick one that has smallest x value)
+- Sort remaining (n-1) points by the polar angle (counter-clockwise) they make with starting point that we picked
+- In case if some points have same polar angle you keep the farthest one and remove the rest
+- take starting point (0) and 2 others 1 and 2 and push in stack. Check if angle 012 is < 180
+- then check angle 123, then 234 and so on
+- say, 345 >= 180, pop 5 and 4 from stack and push 5 again
+
+Time complexity = O(NLogN)  // for sorting N-1 points
